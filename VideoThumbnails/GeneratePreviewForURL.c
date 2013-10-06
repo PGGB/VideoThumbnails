@@ -13,7 +13,16 @@ void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview);
 
 OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options)
 {
-    // To complete your generator please implement the function GeneratePreviewForURL in GeneratePreviewForURL.c
+    CGRect rect = CGRectMake(0, 0, 500, 500);
+    CGContextRef cgContext = QLPreviewRequestCreateContext(preview, rect.size, true, nil);
+    if(cgContext)
+    {
+        CGContextSetRGBFillColor(cgContext, 1.0, 0.0, 0.0, 1.0);
+        CGContextFillRect(cgContext, rect);
+        QLPreviewRequestFlushContext(preview, cgContext);
+        CFRelease(cgContext);
+    }
+
     return noErr;
 }
 

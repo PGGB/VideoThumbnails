@@ -12,7 +12,7 @@
 		8CCDF6B418018FFE0024D68F /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCDF6B318018FFE0024D68F /* CoreServices.framework */; };
 		8CCDF6B618018FFE0024D68F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCDF6B518018FFE0024D68F /* CoreFoundation.framework */; };
 		8CCDF6BC18018FFE0024D68F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CCDF6BA18018FFE0024D68F /* InfoPlist.strings */; };
-		8CCDF6BE18018FFE0024D68F /* GenerateThumbnailForURL.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDF6BD18018FFE0024D68F /* GenerateThumbnailForURL.c */; };
+		8CCDF6BE18018FFE0024D68F /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDF6BD18018FFE0024D68F /* GenerateThumbnailForURL.m */; };
 		8CCDF6C018018FFE0024D68F /* GeneratePreviewForURL.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDF6BF18018FFE0024D68F /* GeneratePreviewForURL.c */; };
 		8CCDF6C218018FFF0024D68F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDF6C118018FFF0024D68F /* main.c */; };
 /* End PBXBuildFile section */
@@ -25,7 +25,7 @@
 		8CCDF6B518018FFE0024D68F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		8CCDF6B918018FFE0024D68F /* VideoThumbnails-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VideoThumbnails-Info.plist"; sourceTree = "<group>"; };
 		8CCDF6BB18018FFE0024D68F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8CCDF6BD18018FFE0024D68F /* GenerateThumbnailForURL.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GenerateThumbnailForURL.c; sourceTree = "<group>"; };
+		8CCDF6BD18018FFE0024D68F /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
 		8CCDF6BF18018FFE0024D68F /* GeneratePreviewForURL.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GeneratePreviewForURL.c; sourceTree = "<group>"; };
 		8CCDF6C118018FFF0024D68F /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		8CCDF6C318018FFF0024D68F /* VideoThumbnails-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VideoThumbnails-Prefix.pch"; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		8CCDF6B718018FFE0024D68F /* VideoThumbnails */ = {
 			isa = PBXGroup;
 			children = (
-				8CCDF6BD18018FFE0024D68F /* GenerateThumbnailForURL.c */,
+				8CCDF6BD18018FFE0024D68F /* GenerateThumbnailForURL.m */,
 				8CCDF6BF18018FFE0024D68F /* GeneratePreviewForURL.c */,
 				8CCDF6C118018FFF0024D68F /* main.c */,
 				8CCDF6B818018FFE0024D68F /* Supporting Files */,
@@ -179,7 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CCDF6BE18018FFE0024D68F /* GenerateThumbnailForURL.c in Sources */,
+				8CCDF6BE18018FFE0024D68F /* GenerateThumbnailForURL.m in Sources */,
 				8CCDF6C018018FFE0024D68F /* GeneratePreviewForURL.c in Sources */,
 				8CCDF6C218018FFF0024D68F /* main.c in Sources */,
 			);
@@ -312,6 +312,7 @@
 				8CCDF6C818018FFF0024D68F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
