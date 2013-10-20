@@ -7,17 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C9E3F4B1802045C00BA16AC /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9E3F4A1802045C00BA16AC /* AppKit.framework */; };
+		8CB9892F18143ACB00A254AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB9890F18143A7100A254AC /* Foundation.framework */; };
+		8CB9893518143ACB00A254AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CB9893318143ACB00A254AC /* InfoPlist.strings */; };
+		8CB9893818143ACB00A254AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9893718143ACB00A254AC /* main.m */; };
+		8CB9893C18143AF500A254AC /* org.pggb.ThumbnailService.xpc in Copy XPC Service */ = {isa = PBXBuildFile; fileRef = 8CB9892E18143ACB00A254AC /* org.pggb.ThumbnailService.xpc */; };
+		8CB9894118143FC300A254AC /* ThumbnailManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9894018143FC300A254AC /* ThumbnailManager.m */; };
 		8CCDF6B018018FFE0024D68F /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCDF6AF18018FFE0024D68F /* QuickLook.framework */; };
 		8CCDF6B218018FFE0024D68F /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCDF6B118018FFE0024D68F /* ApplicationServices.framework */; };
 		8CCDF6B418018FFE0024D68F /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCDF6B318018FFE0024D68F /* CoreServices.framework */; };
 		8CCDF6B618018FFE0024D68F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCDF6B518018FFE0024D68F /* CoreFoundation.framework */; };
 		8CCDF6BC18018FFE0024D68F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CCDF6BA18018FFE0024D68F /* InfoPlist.strings */; };
 		8CCDF6BE18018FFE0024D68F /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDF6BD18018FFE0024D68F /* GenerateThumbnailForURL.m */; };
-		8CCDF6C018018FFE0024D68F /* GeneratePreviewForURL.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDF6BF18018FFE0024D68F /* GeneratePreviewForURL.c */; };
+		8CCDF6C018018FFE0024D68F /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDF6BF18018FFE0024D68F /* GeneratePreviewForURL.m */; };
 		8CCDF6C218018FFF0024D68F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDF6C118018FFF0024D68F /* main.c */; };
+		8CD1E350180C9A7700A6B47C /* Thumbnailer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CD1E34E180C9A7700A6B47C /* Thumbnailer.h */; };
+		8CD1E351180C9A7700A6B47C /* Thumbnailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD1E34F180C9A7700A6B47C /* Thumbnailer.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8CB9893D18143AFD00A254AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CCDF6A218018FFE0024D68F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CB9892D18143ACB00A254AC;
+			remoteInfo = ThumbnailService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8CB9891D18143AA800A254AC /* Copy XPC Service */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				8CB9893C18143AF500A254AC /* org.pggb.ThumbnailService.xpc in Copy XPC Service */,
+			);
+			name = "Copy XPC Service";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		8C9E3F4A1802045C00BA16AC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		8CB9890F18143A7100A254AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8CB9892E18143ACB00A254AC /* org.pggb.ThumbnailService.xpc */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = org.pggb.ThumbnailService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB9893218143ACB00A254AC /* ThumbnailService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThumbnailService-Info.plist"; sourceTree = "<group>"; };
+		8CB9893418143ACB00A254AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8CB9893618143ACB00A254AC /* ThumbnailService-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThumbnailService-Prefix.pch"; sourceTree = "<group>"; };
+		8CB9893718143ACB00A254AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8CB9893F18143FC300A254AC /* ThumbnailManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailManager.h; sourceTree = "<group>"; };
+		8CB9894018143FC300A254AC /* ThumbnailManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailManager.m; sourceTree = "<group>"; };
 		8CCDF6AC18018FFE0024D68F /* VideoThumbnails.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoThumbnails.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCDF6AF18018FFE0024D68F /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		8CCDF6B118018FFE0024D68F /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
@@ -26,16 +67,27 @@
 		8CCDF6B918018FFE0024D68F /* VideoThumbnails-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VideoThumbnails-Info.plist"; sourceTree = "<group>"; };
 		8CCDF6BB18018FFE0024D68F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8CCDF6BD18018FFE0024D68F /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
-		8CCDF6BF18018FFE0024D68F /* GeneratePreviewForURL.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GeneratePreviewForURL.c; sourceTree = "<group>"; };
+		8CCDF6BF18018FFE0024D68F /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		8CCDF6C118018FFF0024D68F /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		8CCDF6C318018FFF0024D68F /* VideoThumbnails-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VideoThumbnails-Prefix.pch"; sourceTree = "<group>"; };
+		8CD1E34E180C9A7700A6B47C /* Thumbnailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thumbnailer.h; sourceTree = "<group>"; };
+		8CD1E34F180C9A7700A6B47C /* Thumbnailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Thumbnailer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8CB9892B18143ACB00A254AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CB9892F18143ACB00A254AC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CCDF6A718018FFE0024D68F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C9E3F4B1802045C00BA16AC /* AppKit.framework in Frameworks */,
 				8CCDF6B618018FFE0024D68F /* CoreFoundation.framework in Frameworks */,
 				8CCDF6B018018FFE0024D68F /* QuickLook.framework in Frameworks */,
 				8CCDF6B418018FFE0024D68F /* CoreServices.framework in Frameworks */,
@@ -46,10 +98,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8CB9893018143ACB00A254AC /* ThumbnailService */ = {
+			isa = PBXGroup;
+			children = (
+				8CB9893718143ACB00A254AC /* main.m */,
+				8CB9893118143ACB00A254AC /* Supporting Files */,
+				8CB9893F18143FC300A254AC /* ThumbnailManager.h */,
+				8CB9894018143FC300A254AC /* ThumbnailManager.m */,
+			);
+			path = ThumbnailService;
+			sourceTree = "<group>";
+		};
+		8CB9893118143ACB00A254AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8CB9893218143ACB00A254AC /* ThumbnailService-Info.plist */,
+				8CB9893318143ACB00A254AC /* InfoPlist.strings */,
+				8CB9893618143ACB00A254AC /* ThumbnailService-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		8CCDF6A118018FFE0024D68F = {
 			isa = PBXGroup;
 			children = (
 				8CCDF6B718018FFE0024D68F /* VideoThumbnails */,
+				8CB9893018143ACB00A254AC /* ThumbnailService */,
 				8CCDF6AE18018FFE0024D68F /* Frameworks */,
 				8CCDF6AD18018FFE0024D68F /* Products */,
 			);
@@ -59,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				8CCDF6AC18018FFE0024D68F /* VideoThumbnails.qlgenerator */,
+				8CB9892E18143ACB00A254AC /* org.pggb.ThumbnailService.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,10 +141,12 @@
 		8CCDF6AE18018FFE0024D68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C9E3F4A1802045C00BA16AC /* AppKit.framework */,
 				8CCDF6AF18018FFE0024D68F /* QuickLook.framework */,
 				8CCDF6B118018FFE0024D68F /* ApplicationServices.framework */,
 				8CCDF6B318018FFE0024D68F /* CoreServices.framework */,
 				8CCDF6B518018FFE0024D68F /* CoreFoundation.framework */,
+				8CB9890F18143A7100A254AC /* Foundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -78,8 +155,10 @@
 			isa = PBXGroup;
 			children = (
 				8CCDF6BD18018FFE0024D68F /* GenerateThumbnailForURL.m */,
-				8CCDF6BF18018FFE0024D68F /* GeneratePreviewForURL.c */,
+				8CCDF6BF18018FFE0024D68F /* GeneratePreviewForURL.m */,
 				8CCDF6C118018FFF0024D68F /* main.c */,
+				8CD1E34E180C9A7700A6B47C /* Thumbnailer.h */,
+				8CD1E34F180C9A7700A6B47C /* Thumbnailer.m */,
 				8CCDF6B818018FFE0024D68F /* Supporting Files */,
 			);
 			path = VideoThumbnails;
@@ -102,12 +181,30 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CD1E350180C9A7700A6B47C /* Thumbnailer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		8CB9892D18143ACB00A254AC /* ThumbnailService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CB9893918143ACB00A254AC /* Build configuration list for PBXNativeTarget "ThumbnailService" */;
+			buildPhases = (
+				8CB9892A18143ACB00A254AC /* Sources */,
+				8CB9892B18143ACB00A254AC /* Frameworks */,
+				8CB9892C18143ACB00A254AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThumbnailService;
+			productName = ThumbnailService;
+			productReference = 8CB9892E18143ACB00A254AC /* org.pggb.ThumbnailService.xpc */;
+			productType = "com.apple.product-type.bundle";
+		};
 		8CCDF6AB18018FFE0024D68F /* VideoThumbnails */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CCDF6C618018FFF0024D68F /* Build configuration list for PBXNativeTarget "VideoThumbnails" */;
@@ -117,10 +214,13 @@
 				8CCDF6A818018FFE0024D68F /* Headers */,
 				8CCDF6A918018FFE0024D68F /* Resources */,
 				8CCDF6AA18018FFE0024D68F /* Rez */,
+				8CAB27B118141E760057793F /* Run Script */,
+				8CB9891D18143AA800A254AC /* Copy XPC Service */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8CB9893E18143AFD00A254AC /* PBXTargetDependency */,
 			);
 			name = VideoThumbnails;
 			productName = VideoThumbnails;
@@ -149,11 +249,20 @@
 			projectRoot = "";
 			targets = (
 				8CCDF6AB18018FFE0024D68F /* VideoThumbnails */,
+				8CB9892D18143ACB00A254AC /* ThumbnailService */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8CB9892C18143ACB00A254AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CB9893518143ACB00A254AC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CCDF6A918018FFE0024D68F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,20 +283,63 @@
 		};
 /* End PBXRezBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8CAB27B118141E760057793F /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$BUILT_PRODUCTS_DIR/$EXECUTABLE_FOLDER_PATH/\"\nln -sf \"/Applications/VLC.app/Contents/MacOS/lib\"\nln -sf \"/Applications/VLC.app/Contents/MacOS/plugins\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		8CB9892A18143ACB00A254AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CB9894118143FC300A254AC /* ThumbnailManager.m in Sources */,
+				8CB9893818143ACB00A254AC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CCDF6A618018FFE0024D68F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8CCDF6BE18018FFE0024D68F /* GenerateThumbnailForURL.m in Sources */,
-				8CCDF6C018018FFE0024D68F /* GeneratePreviewForURL.c in Sources */,
+				8CCDF6C018018FFE0024D68F /* GeneratePreviewForURL.m in Sources */,
 				8CCDF6C218018FFF0024D68F /* main.c in Sources */,
+				8CD1E351180C9A7700A6B47C /* Thumbnailer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8CB9893E18143AFD00A254AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CB9892D18143ACB00A254AC /* ThumbnailService */;
+			targetProxy = 8CB9893D18143AFD00A254AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		8CB9893318143ACB00A254AC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CB9893418143ACB00A254AC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		8CCDF6BA18018FFE0024D68F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -199,6 +351,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8CB9893A18143ACB00A254AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThumbnailService/ThumbnailService-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ThumbnailService/ThumbnailService-Info.plist";
+				MACH_O_TYPE = mh_execute;
+				PRODUCT_NAME = "org.pggb.$(TARGET_NAME:rfc1034identifier)";
+				WRAPPER_EXTENSION = xpc;
+			};
+			name = Debug;
+		};
+		8CB9893B18143ACB00A254AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThumbnailService/ThumbnailService-Prefix.pch";
+				INFOPLIST_FILE = "ThumbnailService/ThumbnailService-Info.plist";
+				MACH_O_TYPE = mh_execute;
+				PRODUCT_NAME = "org.pggb.$(TARGET_NAME:rfc1034identifier)";
+				WRAPPER_EXTENSION = xpc;
+			};
+			name = Release;
+		};
 		8CCDF6C418018FFF0024D68F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -273,8 +455,15 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VideoThumbnails/VideoThumbnails-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Applications/VLC.app/Contents/MacOS/include,
+				);
 				INFOPLIST_FILE = "VideoThumbnails/VideoThumbnails-Info.plist";
-				INSTALL_PATH = /Library/QuickLook;
+				INSTALL_PATH = "~/Library/QuickLook";
+				LIBRARY_SEARCH_PATHS = /Applications/VLC.app/Contents/MacOS/lib;
+				OTHER_LDFLAGS = "-lvlc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = qlgenerator;
 			};
@@ -286,8 +475,15 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VideoThumbnails/VideoThumbnails-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Applications/VLC.app/Contents/MacOS/include,
+				);
 				INFOPLIST_FILE = "VideoThumbnails/VideoThumbnails-Info.plist";
-				INSTALL_PATH = /Library/QuickLook;
+				INSTALL_PATH = "~/Library/QuickLook";
+				LIBRARY_SEARCH_PATHS = /Applications/VLC.app/Contents/MacOS/lib;
+				OTHER_LDFLAGS = "-lvlc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = qlgenerator;
 			};
@@ -296,6 +492,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8CB9893918143ACB00A254AC /* Build configuration list for PBXNativeTarget "ThumbnailService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CB9893A18143ACB00A254AC /* Debug */,
+				8CB9893B18143ACB00A254AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		8CCDF6A518018FFE0024D68F /* Build configuration list for PBXProject "VideoThumbnails" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -3,6 +3,8 @@
 #include <QuickLook/QuickLook.h>
 #include <Cocoa/Cocoa.h>
 
+#include "Thumbnailer.h"
+
 OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thumbnail, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options, CGSize maxSize);
 void CancelThumbnailGeneration(void *thisInterface, QLThumbnailRequestRef thumbnail);
 
@@ -14,16 +16,14 @@ void CancelThumbnailGeneration(void *thisInterface, QLThumbnailRequestRef thumbn
 
 OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thumbnail, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options, CGSize maxSize)
 {
-    CGContextRef cgContext = QLThumbnailRequestCreateContext(thumbnail, maxSize, true, nil);
-    if(cgContext)
+    NSXPCListener *listener = [NSXPCListener serviceListener];
+    @autoreleasepool
     {
-        CGContextSetRGBFillColor(cgContext, 1.0, 0.0, 0.0, 1.0);
-        CGContextFillRect(cgContext, CGRectMake(0, 0, maxSize.width, maxSize.height));
-        QLThumbnailRequestFlushContext(thumbnail, cgContext);
-        CFRelease(cgContext);
+        Thumbnailer *thumbnailer = [[Thumbnailer alloc] initWithThumbnailRequest:thumbnail];
+        [thumbnailer createThumbnail];
+
+        QLThumbnailRequestSetImage(thumbnail, [thumbnailer thumbnail], 0);
     }
-
-
     return noErr;
 }
 

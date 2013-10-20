@@ -2,6 +2,8 @@
 #include <CoreServices/CoreServices.h>
 #include <QuickLook/QuickLook.h>
 
+#import <Thumbnailer.h>
+
 OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options);
 void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview);
 
@@ -13,16 +15,25 @@ void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview);
 
 OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options)
 {
-    CGRect rect = CGRectMake(0, 0, 500, 500);
-    CGContextRef cgContext = QLPreviewRequestCreateContext(preview, rect.size, true, nil);
-    if(cgContext)
+    @autoreleasepool
     {
-        CGContextSetRGBFillColor(cgContext, 1.0, 0.0, 0.0, 1.0);
-        CGContextFillRect(cgContext, rect);
-        QLPreviewRequestFlushContext(preview, cgContext);
-        CFRelease(cgContext);
-    }
+        Thumbnailer *thumbnailer = [[Thumbnailer alloc] initWithPreviewRequest:preview];
+        [thumbnailer createThumbnail];
 
+        NSSize size = [thumbnailer size];
+        //NSSize size = NSMakeSize(1920, 1080);
+        QLPreviewRequestSetDataRepresentation(preview, (CFDataRef)[thumbnailer thumbnail], kUTTypeVideo, NULL);
+/*
+        CGContextRef context = QLPreviewRequestCreateContext(preview, size, YES, NULL);
+        if(context)
+        {
+            //CGContextDrawImage(context, NSMakeRect(0, 0, size.width, size.height), [thumbnailer thumbnail]);
+            //QLPreviewRequestFlushContext(preview, context);
+
+            CFRelease(context);
+        }*/
+    }
+    
     return noErr;
 }
 
