@@ -11,7 +11,22 @@
 			<string>QLGenerator</string>
 			<key>LSItemContentTypes</key>
 			<array>
+				<string>public.video</string>
+				<string>com.apple.quicktime-movie</string>
+				<string>public.mpeg</string>
+				<string>public.mpeg-2-video</string>
+				<string>public.mpeg-4</string>
+				<string>com.apple.m4v-video</string>
+				<string>public.avi</string>
+				<string>public.3gpp</string>
+				<string>public.3gpp2</string>
+				<string>com.real.realmedia</string>
+				<string>com.microsoft.windows-media-wmv</string>
 				<string>org.matroska.mkv</string>
+				<string>com.adobe.flash.video</string>
+				<string>com.divx.divx</string>
+				<string>org.xiph.ogv</string>
+				<string>com.google.webm</string>
 			</array>
 		</dict>
 	</array>
@@ -50,13 +65,266 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2013 PGGB. All rights reserved.</string>
 	<key>QLNeedsToBeRunInMainThread</key>
-	<true/>
+	<false/>
 	<key>QLSupportsConcurrentRequests</key>
 	<false/>
 	<key>QLThumbnailMinimumSize</key>
 	<real>17</real>
-	<key>UTExportedTypeDeclarations</key>
+	<key>UTImportedTypeDeclarations</key>
 	<array>
+		<dict>
+			<key>UTTypeIconFiles</key>
+			<array>
+				<string>Video~iphone.png</string>
+				<string>Video@2x~iphone.png</string>
+				<string>VideoScalable~ipad.png</string>
+				<string>VideoScalable@2x~ipad.png</string>
+				<string>VideoStandard~ipad.png</string>
+				<string>VideoStandard@2x~ipad.png</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>public.video</string>
+			<key>UTTypeConformsTo</key>
+			<string>public.movie</string>
+			<key>UTTypeDescription</key>
+			<string>video</string>
+		</dict>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.apple.quicktime-movie</string>
+			<key>UTTypeConformsTo</key>
+			<string>public.movie</string>
+			<key>UTTypeDescription</key>
+			<string>QuickTime movie</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<string>MooV</string>
+				<key>public.mime-type</key>
+				<string>video/quicktime</string>
+				<key>public.filename-extension</key>
+				<array>
+					<string>mov</string>
+					<string>qt</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>public.mpeg</string>
+			<key>UTTypeConformsTo</key>
+			<string>public.movie</string>
+			<key>UTTypeDescription</key>
+			<string>MPEG movie</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<array>
+					<string>MPG </string>
+					<string>MPEG</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>video/mpeg</string>
+					<string>video/mpg</string>
+					<string>video/x-mpeg</string>
+					<string>video/x-mpg</string>
+				</array>
+				<key>public.filename-extension</key>
+				<array>
+					<string>mpg</string>
+					<string>mpeg</string>
+					<string>mpe</string>
+					<string>m75</string>
+					<string>m15</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>public.mpeg-2-video</string>
+			<key>UTTypeConformsTo</key>
+			<string>public.video</string>
+			<key>UTTypeDescription</key>
+			<string>MPEG-2 video</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.mime-type</key>
+				<array>
+					<string>video/mpeg2</string>
+					<string>video/mpeg2-video</string>
+				</array>
+				<key>public.filename-extension</key>
+				<array>
+					<string>m2v</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>public.mpeg-4</string>
+			<key>UTTypeConformsTo</key>
+			<string>public.movie</string>
+			<key>UTTypeDescription</key>
+			<string>MPEG-4 movie</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<array>
+					<string>mpg4</string>
+					<string>MP4 </string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>video/mp4</string>
+					<string>video/mp4v-es</string>
+				</array>
+				<key>public.filename-extension</key>
+				<array>
+					<string>mp4</string>
+					<string>mpg4</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.apple.m4v-video</string>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.movie</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Apple MPEG-4 movie</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<array>
+					<string>M4V </string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>video/x-m4v</string>
+				</array>
+				<key>public.filename-extension</key>
+				<array>
+					<string>m4v</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>public.avi</string>
+			<key>UTTypeConformsTo</key>
+			<string>public.movie</string>
+			<key>UTTypeDescription</key>
+			<string>AVI movie</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<array>
+					<string>VfW </string>
+					<string>Vfw </string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>video/avi</string>
+					<string>video/msvideo</string>
+					<string>video/x-msvideo</string>
+				</array>
+				<key>public.filename-extension</key>
+				<array>
+					<string>avi</string>
+					<string>vfw</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>public.3gpp</string>
+			<key>UTTypeConformsTo</key>
+			<string>public.movie</string>
+			<key>UTTypeDescription</key>
+			<string>3GPP movie</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<array>
+					<string>3gpp</string>
+					<string>sdv </string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>video/3gpp</string>
+					<string>audio/3gpp</string>
+				</array>
+				<key>public.filename-extension</key>
+				<array>
+					<string>3gp</string>
+					<string>3gpp</string>
+					<string>sdv</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>public.3gpp2</string>
+			<key>UTTypeConformsTo</key>
+			<string>public.movie</string>
+			<key>UTTypeDescription</key>
+			<string>3GPP2 movie</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<array>
+					<string>3gp2</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>video/3gpp2</string>
+					<string>audio/3gpp2</string>
+				</array>
+				<key>public.filename-extension</key>
+				<array>
+					<string>3g2</string>
+					<string>3gp2</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.real.realmedia</string>
+			<key>UTTypeConformsTo</key>
+			<string>public.movie</string>
+			<key>UTTypeDescription</key>
+			<string>RealMedia</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<string>PNRM</string>
+				<key>public.mime-type</key>
+				<string>application/vnd.rn-realmedia</string>
+				<key>public.filename-extension</key>
+				<string>rm</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.microsoft.windows-media-wmv</string>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.movie</string>
+				<string>com.microsoft.advanced-systems-format</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Windows media</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.mime-type</key>
+				<string>video/x-ms-wmv</string>
+				<key>public.filename-extension</key>
+				<string>wmv</string>
+			</dict>
+		</dict>
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
@@ -74,7 +342,9 @@
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>com.apple.ostype</key>
-				<string>MKV</string>
+				<array>
+					<string>MKV </string>
+				</array>
 				<key>public.filename-extension</key>
 				<array>
 					<string>mkv</string>
@@ -82,6 +352,129 @@
 				<key>public.mime-type</key>
 				<array>
 					<string>video/x-matroska</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.movie</string>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Adobe Flash Video File</string>
+			<key>UTTypeIconFile</key>
+			<string></string>
+			<key>UTTypeIdentifier</key>
+			<string>com.adobe.flash.video</string>
+			<key>UTTypeReferenceURL</key>
+			<string>http://www.adobe.com/devnet/flv/</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<array>
+					<string>MFLV</string>
+				</array>
+				<key>public.filename-extension</key>
+				<array>
+					<string>flv</string>
+					<string>f4v</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>video/x-flv</string>
+					<string>flv-application/octet-stream</string>
+				</array>
+				<key>public.uti</key>
+				<array>
+					<string>com.apple.flash-video</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.avi</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Divx Movie File</string>
+			<key>UTTypeIconFile</key>
+			<string></string>
+			<key>UTTypeIdentifier</key>
+			<string>com.divx.divx</string>
+			<key>UTTypeReferenceURL</key>
+			<string>http://www.divx.com</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<array>
+					<string>DIVX</string>
+				</array>
+				<key>public.filename-extension</key>
+				<array>
+					<string>divx</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>video/x-divx</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.movie</string>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Ogg Video</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.xiph.ogv</string>
+			<key>UTTypeReferenceURL</key>
+			<string>http://xiph.org/ogg/</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<array>
+					<string>OggV</string>
+				</array>
+				<key>public.filename-extension</key>
+				<array>
+					<string>ogv</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>video/ogg</string>
+					<string>video/x-ogg</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>org.matroska.mkv</string>
+				<string>org.matroska.mka</string>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>WebM Media</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.google.webm</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<array>
+					<string>WEBM</string>
+				</array>
+				<key>public.filename-extension</key>
+				<array>
+					<string>webm</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>video/webm</string>
+					<string>audio/webm</string>
 				</array>
 			</dict>
 		</dict>

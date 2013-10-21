@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import <QuickLook/QuickLook.h>
 
+#include <vlc/vlc.h>
+
 @interface Thumbnailer : NSObject
 
 - (instancetype)initWithThumbnailRequest:(QLThumbnailRequestRef)thumbnailRequest;
@@ -16,6 +18,7 @@
 - (void)createThumbnail;
 - (void)didFetchImage;
 - (BOOL)requestIsCancelled;
+- (void)setInstance:(libvlc_instance_t *)instance;
 
 @property(readonly) void *pixels;
 @property(readonly) dispatch_semaphore_t thumbnailerSemaphore;

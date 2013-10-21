@@ -8,10 +8,6 @@
 
 #import "Thumbnailer.h"
 
-#include <vlc/vlc.h>
-
-//static libvlc_instance_t *_vlc_instance;
-
 static const float thumbnailerSeekPosition = 0.5f;
 
 static void *lock(void *opaque, void **pixels)
@@ -46,27 +42,12 @@ static void unlock(void *opaque, void *picture, void *const *p_pixels)
 @property QLThumbnailRequestRef thumbnailRequest;
 @property QLPreviewRequestRef   previewRequest;
 
+@property unsigned int receivedFrames;
+
 @end
 
 
 @implementation Thumbnailer
-
-- (instancetype)init
-{
-    self = [super init];
-
-    if(self)
-    {
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            NSLog(@"Creating VLC instance!!!");
-            //_vlc_instance = libvlc_new (0, NULL);
-        });
-        _thumbnailerSemaphore = dispatch_semaphore_create(0);
-    }
-
-    return self;
-}
 
 - (instancetype)initWithThumbnailRequest:(QLThumbnailRequestRef)thumbnailRequest
 {
@@ -77,6 +58,7 @@ static void unlock(void *opaque, void *picture, void *const *p_pixels)
         _url = (__bridge NSURL *)(QLThumbnailRequestCopyURL(thumbnailRequest));
         _size = QLThumbnailRequestGetMaximumSize(thumbnailRequest);
         _thumbnailRequest = thumbnailRequest;
+        _thumbnailerSemaphore = dispatch_semaphore_create(0);
     }
 
     return self;
@@ -90,6 +72,7 @@ static void unlock(void *opaque, void *picture, void *const *p_pixels)
     {
         _url = (__bridge NSURL *)(QLPreviewRequestCopyURL(previewRequest));
         _previewRequest = previewRequest;
+        _thumbnailerSemaphore = dispatch_semaphore_create(0);
     }
 
     return self;
@@ -97,21 +80,14 @@ static void unlock(void *opaque, void *picture, void *const *p_pixels)
 
 - (void)dealloc
 {
-    if(_thumbnail)
-        CGImageRelease(_thumbnail);
-
     libvlc_media_release(_vlc_media);
     _vlc_media = NULL;
     libvlc_media_player_release (_vlc_media_player);
     _vlc_media_player = NULL;
-    libvlc_release(_vlc_instance);
-    _vlc_instance = NULL;
 }
 
 - (void)createThumbnail
 {
-    _vlc_instance = libvlc_new (0, NULL);
-
     _vlc_media = libvlc_media_new_location(_vlc_instance, [[_url absoluteString] UTF8String]);
     libvlc_media_add_option(_vlc_media, "no-audio");
     libvlc_media_parse(_vlc_media);
@@ -138,13 +114,13 @@ static void unlock(void *opaque, void *picture, void *const *p_pixels)
         if(_size.width && _size.height)
         {
             if(_size.width / videoWidth < _size.height / videoHeight)
-                _size.height = _size.width / videoWidth * videoHeight;
+                _size.height = round(_size.width / videoWidth * videoHeight);
             else
-                _size.width  = _size.height / videoHeight * videoWidth;
+                _size.width  = round(_size.height / videoHeight * videoWidth);
         }
         else
         {
-            _size.width = videoWidth;
+            _size.width  = videoWidth;
             _size.height = videoHeight;
         }
     }
@@ -167,7 +143,11 @@ static void unlock(void *opaque, void *picture, void *const *p_pixels)
 
 - (void)didFetchImage
 {
-    if(libvlc_media_player_get_position(_vlc_media_player) < thumbnailerSeekPosition)
+    ++_receivedFrames;
+
+    if(libvlc_media_player_get_position(_vlc_media_player) < thumbnailerSeekPosition
+       && libvlc_media_player_get_length(_vlc_media_player) > 1000
+       && _receivedFrames < 10)
         return;
 
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -181,6 +161,7 @@ static void unlock(void *opaque, void *picture, void *const *p_pixels)
                                                 pitch,
                                                 colorSpace,
                                                 kCGImageAlphaNoneSkipLast);
+
     CGColorSpaceRelease(colorSpace);
     _thumbnail = CGBitmapContextCreateImage(bitmap);
     CGContextRelease(bitmap);
@@ -197,6 +178,11 @@ static void unlock(void *opaque, void *picture, void *const *p_pixels)
         return QLPreviewRequestIsCancelled(_previewRequest);
 
     return YES;
+}
+
+- (void)setInstance:(libvlc_instance_t *)instance
+{
+    _vlc_instance = instance;
 }
 
 @end
