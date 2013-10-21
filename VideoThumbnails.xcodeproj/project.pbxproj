@@ -22,19 +22,6 @@
 		8CD1E351180C9A7700A6B47C /* Thumbnailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD1E34F180C9A7700A6B47C /* Thumbnailer.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		8CB9891D18143AA800A254AC /* Copy XPC Service */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			name = "Copy XPC Service";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		8C64F32C1815C4CA00607D4F /* ThumbnailerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailerManager.h; sourceTree = "<group>"; };
 		8C64F32D1815C4CA00607D4F /* ThumbnailerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailerManager.m; sourceTree = "<group>"; };
@@ -151,7 +138,6 @@
 				8CCDF6A918018FFE0024D68F /* Resources */,
 				8CCDF6AA18018FFE0024D68F /* Rez */,
 				8CAB27B118141E760057793F /* Run Script */,
-				8CB9891D18143AA800A254AC /* Copy XPC Service */,
 			);
 			buildRules = (
 			);
