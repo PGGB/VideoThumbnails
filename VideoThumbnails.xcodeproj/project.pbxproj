@@ -10,6 +10,9 @@
 		8C64F32E1815C4CA00607D4F /* ThumbnailerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C64F32C1815C4CA00607D4F /* ThumbnailerManager.h */; };
 		8C64F32F1815C4CA00607D4F /* ThumbnailerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C64F32D1815C4CA00607D4F /* ThumbnailerManager.m */; };
 		8C9E3F4B1802045C00BA16AC /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9E3F4A1802045C00BA16AC /* AppKit.framework */; };
+		8CB00C941816C9EA00845ED4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB9890F18143A7100A254AC /* Foundation.framework */; };
+		8CB00C971816C9EA00845ED4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB00C961816C9EA00845ED4 /* main.m */; };
+		8CB00C9B1816C9EA00845ED4 /* VideoThumbnailServer.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8CB00C9A1816C9EA00845ED4 /* VideoThumbnailServer.1 */; };
 		8CCDF6B018018FFE0024D68F /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCDF6AF18018FFE0024D68F /* QuickLook.framework */; };
 		8CCDF6B218018FFE0024D68F /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCDF6B118018FFE0024D68F /* ApplicationServices.framework */; };
 		8CCDF6B418018FFE0024D68F /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCDF6B318018FFE0024D68F /* CoreServices.framework */; };
@@ -22,12 +25,29 @@
 		8CD1E351180C9A7700A6B47C /* Thumbnailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD1E34F180C9A7700A6B47C /* Thumbnailer.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8CB00C911816C9E900845ED4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				8CB00C9B1816C9EA00845ED4 /* VideoThumbnailServer.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8C64F32C1815C4CA00607D4F /* ThumbnailerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailerManager.h; sourceTree = "<group>"; };
 		8C64F32D1815C4CA00607D4F /* ThumbnailerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailerManager.m; sourceTree = "<group>"; };
 		8C9E3F4A1802045C00BA16AC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		8CB00C931816C9E900845ED4 /* VideoThumbnailServer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VideoThumbnailServer; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB00C961816C9EA00845ED4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8CB00C991816C9EA00845ED4 /* VideoThumbnailServer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VideoThumbnailServer-Prefix.pch"; sourceTree = "<group>"; };
+		8CB00C9A1816C9EA00845ED4 /* VideoThumbnailServer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = VideoThumbnailServer.1; sourceTree = "<group>"; };
 		8CB9890F18143A7100A254AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		8CCDF6AC18018FFE0024D68F /* VideoThumbnails.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoThumbnails.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CCDF6AC18018FFE0024D68F /* VideoThumbnailPlugin.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoThumbnailPlugin.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCDF6AF18018FFE0024D68F /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		8CCDF6B118018FFE0024D68F /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		8CCDF6B318018FFE0024D68F /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -43,6 +63,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8CB00C901816C9E900845ED4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CB00C941816C9EA00845ED4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CCDF6A718018FFE0024D68F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -58,10 +86,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8CB00C951816C9EA00845ED4 /* VideoThumbnailServer */ = {
+			isa = PBXGroup;
+			children = (
+				8CB00C961816C9EA00845ED4 /* main.m */,
+				8CB00C9A1816C9EA00845ED4 /* VideoThumbnailServer.1 */,
+				8CB00C981816C9EA00845ED4 /* Supporting Files */,
+			);
+			path = VideoThumbnailServer;
+			sourceTree = "<group>";
+		};
+		8CB00C981816C9EA00845ED4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8CB00C991816C9EA00845ED4 /* VideoThumbnailServer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		8CCDF6A118018FFE0024D68F = {
 			isa = PBXGroup;
 			children = (
-				8CCDF6B718018FFE0024D68F /* VideoThumbnails */,
+				8CCDF6B718018FFE0024D68F /* VideoThumbnailPlugin */,
+				8CB00C951816C9EA00845ED4 /* VideoThumbnailServer */,
 				8CCDF6AE18018FFE0024D68F /* Frameworks */,
 				8CCDF6AD18018FFE0024D68F /* Products */,
 			);
@@ -70,7 +117,8 @@
 		8CCDF6AD18018FFE0024D68F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8CCDF6AC18018FFE0024D68F /* VideoThumbnails.qlgenerator */,
+				8CCDF6AC18018FFE0024D68F /* VideoThumbnailPlugin.qlgenerator */,
+				8CB00C931816C9E900845ED4 /* VideoThumbnailServer */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,7 +136,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8CCDF6B718018FFE0024D68F /* VideoThumbnails */ = {
+		8CCDF6B718018FFE0024D68F /* VideoThumbnailPlugin */ = {
 			isa = PBXGroup;
 			children = (
 				8CCDF6BD18018FFE0024D68F /* GenerateThumbnailForURL.m */,
@@ -100,7 +148,7 @@
 				8C64F32D1815C4CA00607D4F /* ThumbnailerManager.m */,
 				8CCDF6B818018FFE0024D68F /* Supporting Files */,
 			);
-			path = VideoThumbnails;
+			path = VideoThumbnailPlugin;
 			sourceTree = "<group>";
 		};
 		8CCDF6B818018FFE0024D68F /* Supporting Files */ = {
@@ -128,9 +176,26 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8CCDF6AB18018FFE0024D68F /* VideoThumbnails */ = {
+		8CB00C921816C9E900845ED4 /* VideoThumbnailServer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8CCDF6C618018FFF0024D68F /* Build configuration list for PBXNativeTarget "VideoThumbnails" */;
+			buildConfigurationList = 8CB00C9C1816C9EA00845ED4 /* Build configuration list for PBXNativeTarget "VideoThumbnailServer" */;
+			buildPhases = (
+				8CB00C8F1816C9E900845ED4 /* Sources */,
+				8CB00C901816C9E900845ED4 /* Frameworks */,
+				8CB00C911816C9E900845ED4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VideoThumbnailServer;
+			productName = VideoThumbnailServer;
+			productReference = 8CB00C931816C9E900845ED4 /* VideoThumbnailServer */;
+			productType = "com.apple.product-type.tool";
+		};
+		8CCDF6AB18018FFE0024D68F /* VideoThumbnailPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CCDF6C618018FFF0024D68F /* Build configuration list for PBXNativeTarget "VideoThumbnailPlugin" */;
 			buildPhases = (
 				8CCDF6A618018FFE0024D68F /* Sources */,
 				8CCDF6A718018FFE0024D68F /* Frameworks */,
@@ -143,9 +208,9 @@
 			);
 			dependencies = (
 			);
-			name = VideoThumbnails;
+			name = VideoThumbnailPlugin;
 			productName = VideoThumbnails;
-			productReference = 8CCDF6AC18018FFE0024D68F /* VideoThumbnails.qlgenerator */;
+			productReference = 8CCDF6AC18018FFE0024D68F /* VideoThumbnailPlugin.qlgenerator */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -169,7 +234,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8CCDF6AB18018FFE0024D68F /* VideoThumbnails */,
+				8CCDF6AB18018FFE0024D68F /* VideoThumbnailPlugin */,
+				8CB00C921816C9E900845ED4 /* VideoThumbnailServer */,
 			);
 		};
 /* End PBXProject section */
@@ -213,6 +279,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8CB00C8F1816C9E900845ED4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CB00C971816C9EA00845ED4 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CCDF6A618018FFE0024D68F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,6 +313,28 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8CB00C9D1816C9EA00845ED4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VideoThumbnailServer/VideoThumbnailServer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8CB00C9E1816C9EA00845ED4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VideoThumbnailServer/VideoThumbnailServer-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		8CCDF6C418018FFF0024D68F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -350,6 +446,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8CB00C9C1816C9EA00845ED4 /* Build configuration list for PBXNativeTarget "VideoThumbnailServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CB00C9D1816C9EA00845ED4 /* Debug */,
+				8CB00C9E1816C9EA00845ED4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8CCDF6A518018FFE0024D68F /* Build configuration list for PBXProject "VideoThumbnails" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -359,7 +464,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8CCDF6C618018FFF0024D68F /* Build configuration list for PBXNativeTarget "VideoThumbnails" */ = {
+		8CCDF6C618018FFF0024D68F /* Build configuration list for PBXNativeTarget "VideoThumbnailPlugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8CCDF6C718018FFF0024D68F /* Debug */,
